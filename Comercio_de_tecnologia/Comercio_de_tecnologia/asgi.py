@@ -1,5 +1,5 @@
 """
-ASGI config for Comercio_de_tecmnologia project.
+ASGI config for Comercio_de_tecnologia project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Comercio_de_tecmnologia.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Comercio_de_tecnologia.settings')
 
 application = get_asgi_application()
