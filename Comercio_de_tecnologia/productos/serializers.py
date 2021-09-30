@@ -4,14 +4,14 @@ from rest_framework import serializers
 class categoria_serial(serializers.ModelSerializer):
     class Meta:
         model = categoria
-        fields = ('nombre','num_articulos')
+        fields = ['id_cat','nombre','logo','num_articulos']
 
 class marca_serial(serializers.ModelSerializer):
     class Meta:
         model = marca
-        fields = ('nombre','num_articulos')
+        fields = ['nombre','logo','num_articulos']
 
-class articulo_serial(serializers.ModelSerializer):
+class articulo_serial(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = articulo
-        fields = ('referencia','marca','categoria','precio')
+        fields = '__all__'
