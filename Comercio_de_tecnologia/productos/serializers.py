@@ -11,7 +11,7 @@ class marca_serial(serializers.ModelSerializer):
         model = marca
         fields = ['nombre','logo','num_articulos']
 
-class articulo_serial(serializers.ModelSerializer):
+class articulo_serial(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = articulo
         fields = '__all__'
