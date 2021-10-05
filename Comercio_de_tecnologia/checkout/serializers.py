@@ -3,7 +3,7 @@ from django.db.models.base import Model
 from checkout.models import *
 from rest_framework import serializers
 
-class carrito_serial(serializers.ModelSerializer):
+class carrito_serial(serializers.HyperlinkedModelSerializer):
     class Meta:
         model=carrito
         fields=["perfil","info_envio","fecha","pagado","cant_art","total"]

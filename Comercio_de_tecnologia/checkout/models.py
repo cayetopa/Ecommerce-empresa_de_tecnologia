@@ -35,7 +35,8 @@ class producto (models.Model):
     cantidad = models.IntegerField(default=0)
     
     def __str__(self):
-        return self.carrito.__str__() + "(" + self.producto.nombre + ")" + "[" + str(self.cantidad)+ "]"
+        #return self.carrito.__str__() + "(" + self.producto.nombre + ")" + "[" + str(self.cantidad)+ "]"
+        return self.producto.nombre + " [" + str(self.cantidad)+ "] " + "(" + self.carrito.__str__()+ ")"
     
     @property
     def subtotal(self):

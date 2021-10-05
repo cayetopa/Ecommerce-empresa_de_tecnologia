@@ -3,7 +3,7 @@ from checkout.models import producto, carrito
 
 
 class Garantias(models.Model):
-    producto=models.ForeignKey(producto, on_delete=models.CASCADE , null=True, blank = True)
+    producto=models.ForeignKey(producto, on_delete=models.CASCADE)
     cantidad=models.IntegerField()
     descripcion=models.TextField()
     fecha_entrada=models.DateField(auto_now_add=True)
@@ -14,7 +14,7 @@ class Garantias(models.Model):
         return self.producto.producto.nombre + " - " + self.producto.carrito.perfil.usuario.username + " - " + str(self.fecha_entrada)
 
 class Devoluciones(models.Model):
-    producto=models.ForeignKey(producto, on_delete=models.CASCADE, null=True, blank = True)
+    producto=models.ForeignKey(producto, on_delete=models.CASCADE)
     cantidad=models.IntegerField()
     descripcion=models.TextField()
     fecha=models.DateField(auto_now_add=True)
@@ -23,7 +23,7 @@ class Devoluciones(models.Model):
         return str(self.cantidad) + " - " + self.producto.producto.nombre + " - " + self.producto.carrito.perfil.usuario.username + " - " + str(self.fecha)
 
 class Entregas(models.Model):
-    carrito=models.ForeignKey(carrito,on_delete=models.CASCADE , null=True, blank = True)
+    carrito=models.ForeignKey(carrito,on_delete=models.CASCADE)
     enviado=models.BooleanField(default=False)
     fecha_envio=models.DateField(null=True, blank=True)
     entregado=models.BooleanField(default=False)

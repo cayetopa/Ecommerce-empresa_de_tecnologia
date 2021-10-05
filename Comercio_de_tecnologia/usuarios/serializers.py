@@ -16,7 +16,7 @@ class PerfilSerial (serializers.HyperlinkedModelSerializer):
         model = Perfil
         fields = '__all__'
 
-class InfoSerial (serializers.ModelSerializer):
+class InfoSerial (serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Info_envio
         fields ='__all__'

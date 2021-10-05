@@ -9,7 +9,7 @@ from rest_framework.response import Response
 class UsuarioAPI (viewsets.ModelViewSet):
     serializer_class =UsuarioSerial
     authentication_classes = (authentication.SessionAuthentication,)
-    permission_classes = (permissions.IsAdminUser, AccesoPersonal)
+    permission_classes = (permissions.IsAuthenticated, AccesoPersonal)
     queryset = get_user_model().objects.all()
 
 class PerfilAPI (viewsets.ModelViewSet):
